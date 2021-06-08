@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".view.fragment.home.HomeFragment">
+
+    <ImageView
+        android:id="@+id/bg_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/txtPeluang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/txtpeluang"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.synnapps.carouselview.CarouselView
+        android:id="@+id/image_home"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:fillColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bg_top"
+        app:pageColor="@color/black"
+        app:radius="6dp"
+        app:slideInterval="3000"
+        app:strokeColor="@color/teal_700"
+        app:strokeWidth="1dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_gmb_franchise"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/brown_200"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_home"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/iv_foto_franchise"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/ic_store"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_franchise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="110dp"
+            android:text="@string/franchise"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/image_franchise"
+            app:layout_constraintStart_toStartOf="@+id/image_franchise"
+            app:layout_constraintTop_toBottomOf="@+id/image_franchise" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_gmb_reseller"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="@color/brown_200"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_home"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/iv_foto_reseller"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/ic_store" />
+
+        <TextView
+            android:id="@+id/tv_reseller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="110dp"
+            android:text="@string/reseller"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_gmb_guide"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/brown_200"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_gmb_franchise"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/iv_foto_guide"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/ic_info" />
+
+        <TextView
+            android:id="@+id/tv_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="110dp"
+            android:text="@string/guide"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_gmb_about"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="@color/brown_200"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_gmb_reseller"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/iv_foto_about"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/ic_account_box" />
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="110dp"
+            android:text="@string/about"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

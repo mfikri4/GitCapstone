@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Capstone Bangkit</string>
+    <string name="title">Title</string>
+    <string name="description">description</string>
+    <string name="name">Janji Jiwa</string>
+    <string name="modal">10.000.000</string>
+    <string name="contact">contact</string>
+    <string name="detail_name">detail name</string>
+    <string name="regulation">Dapat mengambil barang di lokasi; Selalu update barang baru</string>
+    <string name="input_your_modal">input your modal</string>
+    <string name="franchise">Franchise</string>
+    <string name="reseller">Reseller</string>
+    <string name="about">About</string>
+    <string name="rp">Rp. </string>
+    <string name="textRegulation">Regulation</string>
+    <string name="guide">Guide</string>
+    <string name="detail_franchise">Detail Franchise</string>
+    <string name="detail_reseller">Detail Reseller</string>
+    <string name="next">Next</string>
+    <string name="detail_about">Detail About</string>
+    <string name="detail_guide">Detail Guide</string>
+    <string name="range_modal">75 Juta - 100 Juta</string>
+    <string name="range">Range Modal :</string>
+    <string name="imagePost">Image For Detail</string>
+    <string name="txtdeskripsi">Description</string>
+    <string name="tvdeskripsi">Menerima pesanan buket lain sesuai dengan selera; Menerima pesanan jenis bunga yang ada didalam buket sesuai selera; Menerima pesanan bentuk wrapping paper buket sesuai selera Menerima pesanan buket lain sesuai dengan selera; Menerima pesanan jenis bunga yang ada didalam buket sesuai selera; Menerima pesanan bentuk wrapping paper buket sesuai selera Menerima pesanan buket lain sesuai dengan selera; Menerima pesanan jenis bunga yang ada didalam buket sesuai selera; Menerima pesanan bentuk wrapping paper buket sesuai selera</string>
+</resources>
