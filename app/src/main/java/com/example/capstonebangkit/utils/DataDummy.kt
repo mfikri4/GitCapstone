@@ -1,38 +1,11 @@
 package com.example.capstonebangkit.utils
 
 import com.example.capstonebangkit.R
-import com.example.capstonebangkit.model.About
 import com.example.capstonebangkit.model.Guide
 
 object DataDummy {
 
-    fun generateAbout() : List<About>{
 
-        val aboutList = ArrayList<About>()
-
-        aboutList.add(
-                About(
-                        R.drawable.img_about_franchise,
-                        "Apa itu Franchise?",
-                        "Dalam bahasa Indonesia, arti franchise adalah waralaba. Franchise adalah bisnis yang mendirikan usaha menggunakan merek dagang usaha lain tetapi pihak pewaralaba harus membayar biaya awal dan royalti secara berkelanjutan.\n" +
-                                "\n" +
-                                "Sederhananya, Anda mendirikan usaha dengan merek yang sudah ada. Sehingga Anda tidak perlu mencari konsumen baru sebab sebelumnya orang telah mengenal merek tersebut.\n" +
-                                "\n" +
-                                "Tak hanya merek dagang saja yang diperoleh, namun pewaralaba juga mendapatkan keuntungan berupa dukungan, sistem bisnis, dan suplai produksi."
-                )
-        )
-        aboutList.add(
-                About(
-                        R.drawable.img_about_reseller,
-                        "Apa itu Reseller?",
-                        "Reseller adalah perusahaan atau individu (pedagang) yang membeli barang atau jasa dengan tujuan untuk menjualnya daripada mengkonsumsi atau menggunakannya. Ini biasanya dilakukan untuk mendapatkan keuntungan (tapi bisa dijual kembali dengan kerugian). Salah satu contoh dapat ditemukan di industri telekomunikasi, di mana perusahaan membeli kapasitas transmisi atau waktu panggilan yang berlebihan dari operator lain dan menjualnya kembali ke operator yang lebih kecil.\n" +
-                                "\n" +
-                                "Menurut Institute for Partner Education & Development, model bisnis berbasis pemenuhan produk pengecer mencakup pengecer korporat, pengecer, pengecer pasar langsung (DMR), dan pengecer internet (eTailer); kurang dari 10 persen pendapatannya berasal dari jasa."
-                )
-        )
-        return aboutList
-
-    }
     fun generateGuide() : List<Guide>{
 
         val guideList = ArrayList<Guide>()

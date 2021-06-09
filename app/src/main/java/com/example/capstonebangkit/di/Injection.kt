@@ -10,6 +10,7 @@ object Injection {
 
         val remoteDataSource = RemoteDataSource.getInstance()
 
+
         return Repository.getInstance(remoteDataSource)
     }
 }

@@ -56,9 +56,6 @@
         <action
             android:id="@+id/action_aboutFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_aboutFragment_to_detailAboutFragment"
-            app:destination="@id/detailAboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/guideFragment"
@@ -82,7 +79,7 @@
             app:destination="@id/franchiseFragment" />
         <argument
             android:name="detailFranchise"
-            app:argType="com.example.capstonebangkit.model.Reseller"
+            app:argType="com.example.capstonebangkit.model.Franchise"
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>
@@ -97,20 +94,6 @@
         <argument
             android:name="detailReseller"
             app:argType="com.example.capstonebangkit.model.Reseller" />
-    </fragment>
-    <fragment
-        android:id="@+id/detailAboutFragment"
-        android:name="com.example.capstonebangkit.view.fragment.detail.DetailAboutFragment"
-        android:label="fragment_detail_about"
-        tools:layout="@layout/fragment_detail_about" >
-        <action
-            android:id="@+id/action_detailAboutFragment_to_aboutFragment"
-            app:destination="@id/aboutFragment" />
-        <argument
-            android:name="detailAbout"
-            app:argType="com.example.capstonebangkit.model.About"
-            app:nullable="true"
-            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/guideDetailFragment"

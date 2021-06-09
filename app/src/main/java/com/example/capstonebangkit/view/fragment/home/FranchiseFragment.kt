@@ -1,29 +1,29 @@
 package com.example.capstonebangkit.view.fragment.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.capstonebangkit.viewmodel.FranchiseViewModel
 import com.example.capstonebangkit.R
-import com.example.capstonebangkit.viewmodel.ViewModelFactory
-import com.example.capstonebangkit.adapter.ListAdapter
+import com.example.capstonebangkit.adapter.ListFranchiseAdapter
 import com.example.capstonebangkit.databinding.FragmentFranchiseBinding
-import com.example.capstonebangkit.model.Reseller
-import com.example.capstonebangkit.utils.DataCallbackReseller
+import com.example.capstonebangkit.model.Franchise
+import com.example.capstonebangkit.utils.DataCallbackFranchise
+import com.example.capstonebangkit.viewmodel.FranchiseViewModel
+import com.example.capstonebangkit.viewmodel.ViewModelFactory
 
-class FranchiseFragment : Fragment() ,DataCallbackReseller{
+class FranchiseFragment : Fragment() ,DataCallbackFranchise{
 
     private var _binding: FragmentFranchiseBinding? = null
     private val binding get() = _binding!!
-    private  lateinit var listAdapter: ListAdapter
+    private  lateinit var listFranchiseAdapter: ListFranchiseAdapter
     private lateinit var viewModel : FranchiseViewModel
     private lateinit var viewModelFactory: ViewModelFactory
     override fun onCreateView(
@@ -48,23 +48,35 @@ class FranchiseFragment : Fragment() ,DataCallbackReseller{
             Navigation.findNavController(view).navigate(R.id.action_franchiseFragment_to_homeFragment)
         }
 
-        binding.spinKit.visibility = View.VISIBLE
-        listAdapter = ListAdapter(this)
+        listFranchiseAdapter = ListFranchiseAdapter(this)
         init()
-        observe()
+
+        val input = binding.edtInput.text
+        binding.imgSearch.setOnClickListener {
+            if (input.isNotEmpty()){
+
+                binding.imgEmpty.visibility = View.INVISIBLE
+                binding.spinKit.visibility = View.VISIBLE
+                observe()
+
+            }
+        }
 
     }
     private fun observe(){
         viewModel.getFranchise().observe(viewLifecycleOwner, Observer { listFranchise ->
-            listAdapter.setData(listFranchise)
+
             binding.spinKit.visibility = View.GONE
+            listFranchiseAdapter.setData(listFranchise)
+            binding.rvFranchise.visibility = View.VISIBLE
+
         })
     }
     private fun init (){
         with(binding.rvFranchise) {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(requireActivity())
-            adapter = listAdapter
+            adapter = listFranchiseAdapter
 
         }
     }
@@ -75,10 +87,10 @@ class FranchiseFragment : Fragment() ,DataCallbackReseller{
         _binding = null
     }
 
-    override fun onCallback(reseller: Reseller) {
 
-        val extraData = FranchiseFragmentDirections.actionFranchiseFragmentToDetailFragmentFranchise(reseller)
+    override fun onCallback(franchise: Franchise) {
+
+        val extraData = FranchiseFragmentDirections.actionFranchiseFragmentToDetailFragmentFranchise(franchise)
         view?.findNavController()?.navigate(extraData)
-
     }
 }

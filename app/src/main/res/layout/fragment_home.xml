@@ -44,7 +44,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_gmb_franchise"
         android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_height="0dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         app:cardBackgroundColor="@color/brown_200"
@@ -59,7 +59,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/ic_store"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="100dp"
             android:text="@string/franchise"
             android:textColor="@color/black"
             android:textSize="20sp"
@@ -82,7 +82,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_gmb_reseller"
         android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_height="0dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         app:cardBackgroundColor="@color/brown_200"
@@ -97,7 +97,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/ic_store" />
 
         <TextView
@@ -105,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="100dp"
             android:text="@string/reseller"
             android:textColor="@color/black"
             android:textSize="20sp" />
@@ -114,13 +114,13 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_gmb_guide"
         android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:layout_marginStart="20dp"
+        android:layout_height="0dp"
         android:layout_marginTop="20dp"
         app:cardBackgroundColor="@color/brown_200"
         app:cardCornerRadius="15dp"
         app:cardElevation="15dp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/card_gmb_franchise"
+        app:layout_constraintStart_toStartOf="@+id/card_gmb_franchise"
         app:layout_constraintTop_toBottomOf="@+id/card_gmb_franchise"
         tools:ignore="MissingConstraints">
 
@@ -129,7 +129,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/ic_info" />
 
         <TextView
@@ -137,7 +137,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="100dp"
             android:text="@string/guide"
             android:textColor="@color/black"
             android:textSize="20sp" />
@@ -146,13 +146,13 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/card_gmb_about"
         android:layout_width="170dp"
-        android:layout_height="170dp"
+        android:layout_height="0dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
         app:cardBackgroundColor="@color/brown_200"
         app:cardCornerRadius="15dp"
         app:cardElevation="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/card_gmb_reseller"
+        app:layout_constraintStart_toStartOf="@+id/card_gmb_reseller"
         app:layout_constraintTop_toBottomOf="@+id/card_gmb_reseller"
         tools:ignore="MissingConstraints">
 
@@ -161,7 +161,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="50dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:background="@drawable/ic_account_box" />
 
         <TextView
@@ -169,7 +169,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="60dp"
-            android:layout_marginTop="110dp"
+            android:layout_marginTop="100dp"
             android:text="@string/about"
             android:textColor="@color/black"
             android:textSize="20sp" />

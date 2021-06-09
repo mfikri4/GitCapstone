@@ -12,22 +12,23 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.capstonebangkit.R
-import com.example.capstonebangkit.viewmodel.ResellerViewModel
-import com.example.capstonebangkit.viewmodel.ViewModelFactory
-import com.example.capstonebangkit.adapter.ListAdapter
+import com.example.capstonebangkit.adapter.ListResellerAdapter
 import com.example.capstonebangkit.databinding.FragmentResellerBinding
 import com.example.capstonebangkit.model.Reseller
 import com.example.capstonebangkit.utils.DataCallbackReseller
+import com.example.capstonebangkit.viewmodel.ResellerViewModel
+import com.example.capstonebangkit.viewmodel.ViewModelFactory
+
 
 class ResellerFragment : Fragment(),DataCallbackReseller {
 
 
     private var _binding: FragmentResellerBinding? = null
     private val binding get() = _binding!!
-    private lateinit var listAdapter: ListAdapter
+    private lateinit var listResellerAdapter: ListResellerAdapter
     private lateinit var viewModel : ResellerViewModel
     private lateinit var viewModelFactory: ViewModelFactory
-    private val TAG = "Reseller Fragment"
+
 
 
     override fun onCreateView(
@@ -55,18 +56,27 @@ class ResellerFragment : Fragment(),DataCallbackReseller {
             binding.imgBack.setOnClickListener {
                 Navigation.findNavController(view).navigate(R.id.action_resellerFragment_to_homeFragment)
             }
-            binding.spinKit.visibility = View.VISIBLE
-            listAdapter = ListAdapter(this)
+            listResellerAdapter = ListResellerAdapter(this)
             init()
-            observe()
 
+
+            val input = binding.edtInput.text
+            binding.imgSearch.setOnClickListener {
+                if (input.isNotEmpty()){
+                    binding.imgEmpty.visibility = View.INVISIBLE
+                    binding.spinKit.visibility = View.VISIBLE
+                    observe()
+                }
+            }
 
         }
     }
     private fun observe(){
         viewModel.getReseller().observe(viewLifecycleOwner, Observer {
-            listAdapter.setData(it)
+
             binding.spinKit.visibility = View.GONE
+            listResellerAdapter.setData(it)
+            binding.rvReseller.visibility = View.VISIBLE
         })
     }
 
@@ -74,7 +84,7 @@ class ResellerFragment : Fragment(),DataCallbackReseller {
         with(binding.rvReseller) {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(requireActivity())
-            adapter = listAdapter
+            adapter = listResellerAdapter
 
         }
     }

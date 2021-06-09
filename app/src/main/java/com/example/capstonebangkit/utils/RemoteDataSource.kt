@@ -2,6 +2,7 @@ package com.example.capstonebangkit.utils
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import com.example.capstonebangkit.model.Franchise
 import com.example.capstonebangkit.model.Reseller
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -28,12 +29,12 @@ class RemoteDataSource {
             list.clear()
             for (i in document.result!!) {
                 val reseller = Reseller(
-                        i.getString("image"),
-                        i.getString("name"),
+                        i.getString("logo"),
                         i.getString("contact"),
-                        i.getString("capital"),
-                        i.getString("rate"),
-                        i.getString("address")
+                        i.getString("name"),
+                        i.getString("modal"),
+                        i.getString("description"),
+                        i.getString("regulation")
 
                 )
                 list.add(reseller)
@@ -45,24 +46,24 @@ class RemoteDataSource {
         return listReseller
     }
 
-    fun getFranchise () : MutableLiveData<List<Reseller>> {
+    fun getFranchise () : MutableLiveData<List<Franchise>> {
 
-        val listFranchise : MutableLiveData<List<Reseller>> = MutableLiveData()
+        val listFranchise : MutableLiveData<List<Franchise>> = MutableLiveData()
         val docRef = db.collection("franchise")
 
-        val list = ArrayList<Reseller>()
+        val list = ArrayList<Franchise>()
         docRef.get().addOnCompleteListener { document->
             list.clear()
             for (i in document.result!!) {
-                val reseller = Reseller(
+                val franchise = Franchise(
                         i.getString("logo"),
-                        i.getString("name"),
                         i.getString("contact"),
-                        i.getString("capital"),
-                        i.getString("rate"),
-                        i.getString("address")
+                        i.getString("name"),
+                        i.getString("modal"),
+                        i.getString("range"),
+                        i.getString("regulation")
                 )
-                list.add(reseller)
+                list.add(franchise)
             }
             listFranchise.postValue(list)
         }.addOnFailureListener { e->

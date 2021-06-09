@@ -1,16 +1,14 @@
 package com.example.capstonebangkit.view.fragment.detail
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.example.capstonebangkit.R
-import com.example.capstonebangkit.databinding.FragmentDetailFranchiseBinding
 import com.example.capstonebangkit.databinding.FragmentDetailResellerBinding
 import com.example.capstonebangkit.model.Reseller
 
@@ -44,7 +42,9 @@ class DetailFragmentReseller : Fragment() {
             with(binding) {
                 detailName.text = StringBuilder("${data.name}")
                 detailContact.text = StringBuilder("${data.contact}")
-                detailModal.text = StringBuilder("${data.capital}")
+                detailModal.text = StringBuilder("${data.modal}")
+                detailRegulation.text = StringBuilder("${data.regulation}")
+                detailDescription.text = StringBuilder("${data.description}")
                 Glide
                     .with(requireActivity())
                     .load(data.logo)

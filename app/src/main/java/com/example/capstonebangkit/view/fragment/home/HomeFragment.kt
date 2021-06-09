@@ -42,10 +42,9 @@ class HomeFragment : Fragment() {
     }
     private fun setImageSlider() {
         val listImages = intArrayOf(
-            R.drawable.pict1,
-            R.drawable.pict2,
-            R.drawable.pict3,
-            R.drawable.pict4
+            R.drawable.img_reseller2,
+            R.drawable.img_about_franchise,
+            R.drawable.img_franchise2
         )
         with(binding) {
             imageHome.apply {

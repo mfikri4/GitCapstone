@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/bg">
 
         <androidx.appcompat.widget.Toolbar
@@ -90,7 +90,7 @@
             android:id="@+id/rp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/rp"
             android:textColor="@color/black"
@@ -103,71 +103,78 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:text="@string/modal"
             android:textColor="@color/black"
             android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/rp"
             app:layout_constraintStart_toEndOf="@+id/rp"
-            app:layout_constraintTop_toBottomOf="@+id/detail_name" />
+            app:layout_constraintTop_toTopOf="@+id/rp" />
 
         <TextView
             android:id="@+id/txt_deskripsi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/txtdeskripsi"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/detail_contact"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/detail_contact" />
 
         <TextView
-            android:id="@+id/tv_deskripsi"
-            android:layout_width="380dp"
+            android:id="@+id/detail_description"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/tvdeskripsi"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/txt_deskripsi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_deskripsi" />
 
         <TextView
             android:id="@+id/detail_contact"
-            android:layout_width="380dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:text="@string/contact"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/rp"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rp" />
 
         <TextView
             android:id="@+id/textRegulation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
             android:text="@string/textRegulation"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/tv_deskripsi"
-            app:layout_constraintTop_toBottomOf="@+id/tv_deskripsi" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_description" />
 
         <TextView
             android:id="@+id/detail_regulation"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
+            android:layout_width="384dp"
+            android:layout_height="175dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
             android:paddingBottom="20dp"
             android:text="@string/regulation"
             android:textColor="@color/black"
             android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="@+id/textRegulation"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textRegulation"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textRegulation" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

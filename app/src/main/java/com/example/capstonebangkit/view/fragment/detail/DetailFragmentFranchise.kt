@@ -1,17 +1,16 @@
 package com.example.capstonebangkit.view.fragment.detail
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.example.capstonebangkit.R
 import com.example.capstonebangkit.databinding.FragmentDetailFranchiseBinding
-import com.example.capstonebangkit.model.Reseller
+import com.example.capstonebangkit.model.Franchise
 
 class DetailFragmentFranchise : Fragment() {
 
@@ -38,13 +37,15 @@ class DetailFragmentFranchise : Fragment() {
         }
     }
 
-    private fun populateFranchise(data: Reseller?) {
+    private fun populateFranchise(data: Franchise?) {
 
         data?.let {
             with(binding) {
                 detailName.text = StringBuilder("${data.name}")
                 detailContact.text = StringBuilder("${data.contact}")
-                detailModal.text = StringBuilder("${data.capital}")
+                detailModal.text = StringBuilder("${data.modal}")
+                detailRegulation.text = StringBuilder("${data.regulation}")
+                rangeModal.text = StringBuilder("${data.rangeModal}")
                 Glide
                     .with(requireActivity())
                     .load(data.logo)
